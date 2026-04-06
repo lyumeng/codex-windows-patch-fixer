@@ -1,5 +1,0 @@
-interface:
-  display_name: "Local Apply Patch"
-  short_description: "Use a bundled local helper when built-in apply_patch fails."
-  default_prompt: "Use $local-apply-patch-fallback to apply this patch in the current repository without relying on the built-in apply_patch tool."
-
