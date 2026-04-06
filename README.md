@@ -15,11 +15,7 @@ On Windows, Codex's built-in `apply_patch` often fails due to:
 - Sandbox creating directories with incorrect ACLs for subsequent writes
 
 ### Solution
-Copy `local-apply-patch-fallback/` to `~/.codex/skills/`. Then tell Codex:
-
-```
-Use the local-apply-patch-fallback skill to apply this patch.
-```
+Copy `local-apply-patch-fallback/` to `~/.codex/skills/`. 
 
 The skill runs a Python helper (`scripts/apply_patch_local.bat`) with no sandbox, reading patches from stdin and bypassing all Windows-specific launch issues.
 
@@ -27,10 +23,6 @@ The skill runs a Python helper (`scripts/apply_patch_local.bat`) with no sandbox
 - **Python 3** must be available.
 - For Windows, place in `%USERPROFILE%\.codex\skills\local-apply-patch-fallback\`.
 
-### Supported operations
-- `*** Add File: <path>`
-- `*** Update File: <path>` (single @@ hunk, exact line match)
-- `*** Delete File: <path>`
 
 ### Install
 ```powershell
@@ -69,17 +61,13 @@ Use the local-apply-patch-fallback skill to apply this patch.
 需要系统中已安装 **Python 3**。
 Windows 下目标位置：`%USERPROFILE%\.codex\skills\local-apply-patch-fallback\`。
 
-### 支持的操作
-- `*** Add File: <路径>`
-- `*** Update File: <路径>`（单个 hunk，需旧内容完全匹配）
-- `*** Delete File: <路径>`
 
 ### 安装
 ```powershell
 # PowerShell
 Copy-Item -Recurse local-apply-patch-fallback $env:USERPROFILE\.codex\skills\
 ```
-或手动复制文件夹。
+或手动复制文件夹到~/.codex/skills/文件夹。
 
 ### 移除
 删除 `~/.codex/skills/local-apply-patch-fallback/`。
